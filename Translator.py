@@ -48,3 +48,23 @@ dic = ('afrikaans', 'af', 'albanian', 'sq',
        'tr', 'ukrainian', 'uk', 'urdu', 'ur', 'uyghur',
        'ug', 'uzbek', 'uz', 'vietnamese', 'vi', 'welsh', 'cy', 'xhosa', 'xh',
        'yiddish', 'yi', 'yoruba', 'yo', 'zulu', 'zu')
+
+def takecommand():
+    r = sr.Recognizer()
+    with sr.Microphone() as source:
+        print("listening.....")
+        r.pause_threshold = 1
+        audio = r.listen(source, 10, 8)
+
+    try:
+        print("Recognizing.....")
+        query = r.recognize_google(audio, language='en-in')
+        print(f"The User said {query}\n")
+    except Exception as e:
+        print("say that again please.....")
+        return "None"
+    return query
+
+query = takecommand()
+while (query == "None"):
+    query = takecommand()
