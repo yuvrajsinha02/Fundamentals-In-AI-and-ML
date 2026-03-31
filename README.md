@@ -7,7 +7,7 @@
 
 **Course:** B.Tech CSE Core  
 
-**Course Code:** CSA    
+**Course Code:** CSA2001   
 
 **Institution:** VIT Bhopal University 
 
