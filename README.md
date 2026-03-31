@@ -61,8 +61,9 @@ Before setting up the project, ensure you have the following installed on your s
 
 You can choose the destination language from the following list
 
-`> Full Language List
+Full Language List
 
+```
 Afrikaans
 
 Albanian
@@ -277,5 +278,6 @@ Yiddish
 
 Yoruba
 
-Zulu`
+Zulu
+```
 - Listen and Read: The script will fetch the translation, play it aloud through your speakers, and print the translated text in the console.
