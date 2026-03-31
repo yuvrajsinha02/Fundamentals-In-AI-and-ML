@@ -70,30 +70,29 @@ while (query == "None"):
     query = takecommand()
 
 
-    def destination_language():
-        print("Enter the language in which you want to convert : Ex. Hindi , English , etc.")
-        print()
+def destination_language():
+    print("Enter the language in which you want to convert : Ex. Hindi , English , etc.")
+    print()
 
+    to_lang = takecommand()
+    while (to_lang == "None"):
         to_lang = takecommand()
-        while (to_lang == "None"):
-            to_lang = takecommand()
-        to_lang = to_lang.lower()
-        return to_lang
+    to_lang = to_lang.lower()
+    return to_lang
 
 
+to_lang = destination_language()
+
+while (to_lang not in dic):
+    print("Language in which you are trying to convert is currently not available ,please input some other language")
+    print()
     to_lang = destination_language()
 
-    while (to_lang not in dic):
-        print(
-            "Language in which you are trying to convert is currently not available ,please input some other language")
-        print()
-        to_lang = destination_language()
+to_lang = dic[dic.index(to_lang) + 1]
 
-    to_lang = dic[dic.index(to_lang) + 1]
-
-    translator = Translator(to_lang=to_lang)
-    text = translator.translate(query)
-    speak = gTTS(text=text, lang=to_lang, slow=False)
+translator = Translator(to_lang=to_lang)
+text = translator.translate(query)
+speak = gTTS(text=text, lang=to_lang, slow=False)
 
     speak.save("captured_voice.mp3")
 
