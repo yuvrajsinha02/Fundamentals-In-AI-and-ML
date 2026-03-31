@@ -94,9 +94,9 @@ translator = Translator(to_lang=to_lang)
 text = translator.translate(query)
 speak = gTTS(text=text, lang=to_lang, slow=False)
 
-    speak.save("captured_voice.mp3")
+speak.save("captured_voice.mp3")
 
-    playsound('captured_voice.mp3')
-    os.remove('captured_voice.mp3')
+playsound('captured_voice.mp3')
+os.remove('captured_voice.mp3')
 
-    print(text)
+print(text)
