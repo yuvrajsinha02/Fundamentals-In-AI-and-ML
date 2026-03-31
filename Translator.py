@@ -90,3 +90,14 @@ while (query == "None"):
         to_lang = destination_language()
 
     to_lang = dic[dic.index(to_lang) + 1]
+
+    translator = Translator(to_lang=to_lang)
+    text = translator.translate(query)
+    speak = gTTS(text=text, lang=to_lang, slow=False)
+
+    speak.save("captured_voice.mp3")
+
+    playsound('captured_voice.mp3')
+    os.remove('captured_voice.mp3')
+
+    print(text)
